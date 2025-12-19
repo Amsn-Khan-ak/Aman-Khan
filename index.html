@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Aman's Profile</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* =========================================
+			   CUSTOM CSS FOR BACKGROUND & VISIBILITY
+			   ========================================= */
+			
+			/* 1. Set the background image for the WHOLE page */
+			body, #page-wrapper {
+				background-image: url("images/header.jpg");
+				background-size: cover;
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				color: #fff;
+			}
+
+			/* 2. Hide sections initially */
+			.profile-section {
+				display: none;
+			}
+			#section-home {
+				display: block;
+			}
+
+			/* 3. Make the white content boxes transparent so background shows */
+			.wrapper.style1, .wrapper.style2 {
+				background-color: rgba(0, 0, 0, 0.4) !important;
+				border-radius: 10px;
+				margin: 20px;
+			}
+
+			/* 4. Force text colors to be white for readability on dark background */
+			h1, h2, h3, h4, h5, h6, p, strong, span, li {
+				color: #ffffff !important;
+				text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+			}
+
+			/* 5. Fix button visibility */
+			.button {
+				box-shadow: inset 0 0 0 2px #ffffff !important;
+				color: #ffffff !important;
+			}
+			.button:hover {
+				background-color: rgba(255, 255, 255, 0.2) !important;
+			}
+			
+			/* 6. Remove the default white background from the main article area */
+			.container.special {
+				background: transparent !important;
+			}
+
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<div id="section-home" class="profile-section">
+				<div id="header">
+					<div class="inner">
+						<header>
+							<h1><a href="index.html" id="logo">Hi, my name is AMAN</a></h1>
+							<hr />
+							<p>Welcome to my profile</p>
+							<p>Please press the start button</p>
+						</header>
+						<footer>
+							<br />
+							<button class="button circled" onclick="showSection('section-personal')">Start</button>
+						</footer>
+					</div>
+				</div>
+			</div>
+
+			<div id="section-personal" class="profile-section">
+				<div class="wrapper style1">
+					<div class="container">
+						<article class="special">
+							<header>
+								<h2>Personal Details</h2>
+								<p>About Aman Khan</p>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/AMAN.png" alt="Aman Khan" style="max-width: 500px; margin: 0 auto; border-radius: 10px;" /></a>
+
+							<section style="text-align: left; max-width: 600px; margin: 0 auto;">
+								<p style="font-size: 1.3em; line-height: 1.8em;">
+									<strong>Name:</strong> Aman Khan<br />
+									<strong>Date of Birth:</strong> 23/04/2001<br />
+									<strong>Place of Birth:</strong> India<br />
+									<strong>Religion:</strong> Muslim<br />
+									<strong>Caste:</strong> Sunni Pathan<br />
+									<strong>Complexion:</strong> Fair<br />
+									<strong>Height:</strong> 6 Feet
+								</p>
+							</section>
+
+							<footer>
+								<br />
+								<button class="button" onclick="showSection('section-family')">Next</button>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			<div id="section-family" class="profile-section">
+				<div class="wrapper style1">
+					<div class="container">
+						<article id="main" class="special">
+							<header>
+								<h2>Family Details</h2>
+								<p>Family Background Information</p>
+							</header>
+							
+							<a href="#" class="image featured"><img src="images/AMAN2.png" alt="Family" style="max-width: 600px; margin: 0 auto; border-radius: 10px;" /></a>
+
+							<section style="text-align: left; max-width: 600px; margin: 0 auto;">
+								<p style="font-size: 1.3em; line-height: 1.8em;">
+									<strong>Father’s Name:</strong> Hayat Khan<br />
+									<strong>Occupation:</strong> Building Work Contractor<br />
+									<strong>Mother’s Name:</strong> Late Nazma Khan<br />
+									<strong>Brothers:</strong> 1 (Younger Brother)<br />
+									<strong>Sisters:</strong> None
+								</p>
+							</section>
+
+							<footer>
+								<br />
+								<button class="button" onclick="showSection('section-education')">Next</button>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			<div id="section-education" class="profile-section">
+				<div class="wrapper style2">
+					<div class="container">
+						<article class="special">
+							<header>
+								<h2>Education, Occupation & Contact</h2>
+								<p>Final Details</p>
+							</header>
+
+							<div class="row">
+								<section class="col-6 col-12-mobile" style="text-align: left;">
+									<h3 style="text-align: center;">Education & Occupation</h3>
+									<p style="font-size: 1.2em;">
+										<strong>Education:</strong> BCA (Bachelor of Computer Applications)<br />
+										<strong>Occupation:</strong> Investor<br />
+										<strong>Monthly Income:</strong> ₹40,000
+									</p>
+								</section>
+
+								<section class="col-6 col-12-mobile" style="text-align: left;">
+									<h3 style="text-align: center;">House & Contact Details</h3>
+									<p style="font-size: 1.2em;">
+										<strong>House:</strong> Own House<br />
+										<strong>Phone No.:</strong> 8989913855<br />
+										<strong>Address:</strong> Seoni, Madhya Pradesh
+									</p>
+								</section>
+							</div>
+
+							<footer>
+								<br /><br />
+								<button class="button" onclick="showSection('section-home')">Back to Home</button>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			function showSection(sectionId) {
+				var sections = document.getElementsByClassName('profile-section');
+				for (var i = 0; i < sections.length; i++) {
+					sections[i].style.display = 'none';
+				}
+				var activeSection = document.getElementById(sectionId);
+				if (activeSection) {
+					activeSection.style.display = 'block';
+					window.scrollTo(0, 0);
+				}
+			}
+		</script>
+
+	</body>
+</html>

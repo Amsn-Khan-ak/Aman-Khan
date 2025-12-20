@@ -8,41 +8,54 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 			/* =========================================
-			   CUSTOM CSS FOR BACKGROUND & VISIBILITY
+			   CUSTOM CSS FOR BACKGROUND & LAYERS
 			   ========================================= */
 			
-			/* 1. Set the background image for the WHOLE page */
+			/* 1. LAYER 1: The Gradient Background (Purple/Black) */
 			body, #page-wrapper {
-				background-image: url("images/header.jpg");
-				background-size: cover;
+				background: rgb(30,25,35);
+				background: radial-gradient(circle, #5e4b63 0%, #201a23 100%);
 				background-attachment: fixed;
-				background-position: center;
 				background-repeat: no-repeat;
+				background-size: cover;
 				color: #fff;
+				margin: 0;
+				min-height: 100vh;
 			}
 
-			/* 2. Hide sections initially */
-			.profile-section {
-				display: none;
+			/* 2. LAYER 2: The Black "Page" / Box behind content */
+			.wrapper.style1, .wrapper.style2, #header .inner {
+				background-color: rgba(0, 0, 0, 0.5) !important; /* Black transparent box */
+				border-radius: 15px;
+				padding: 3em;
+				margin: 20px auto;
+				max-width: 900px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 			}
+
+			/* 3. CENTERING LOGIC FOR HOME PAGE ONLY */
 			#section-home {
-				display: block;
+				/* These lines will be activated by the Javascript below */
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh; /* Takes up full screen height */
+				width: 100%;
+			}
+			
+			/* Ensure the home box is not too wide */
+			#section-home #header .inner {
+				width: auto; 
+				min-width: 300px;
+				max-width: 700px;
 			}
 
-			/* 3. Make the white content boxes transparent so background shows */
-			.wrapper.style1, .wrapper.style2 {
-				background-color: rgba(0, 0, 0, 0.4) !important;
-				border-radius: 10px;
-				margin: 20px;
-			}
-
-			/* 4. Force text colors to be white for readability on dark background */
+			/* 4. TEXT & BUTTON STYLES (White) */
 			h1, h2, h3, h4, h5, h6, p, strong, span, li {
 				color: #ffffff !important;
 				text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 			}
 
-			/* 5. Fix button visibility */
 			.button {
 				box-shadow: inset 0 0 0 2px #ffffff !important;
 				color: #ffffff !important;
@@ -51,10 +64,12 @@
 				background-color: rgba(255, 255, 255, 0.2) !important;
 			}
 			
-			/* 6. Remove the default white background from the main article area */
-			.container.special {
-				background: transparent !important;
-			}
+			/* Utilities */
+			.profile-section { display: none; }
+			#section-home { display: flex; } /* Start Home as Flex */
+			
+			.container.special { background: transparent !important; }
+			#header { padding: 0; width: 100%; display: flex; justify-content: center; }
 
 		</style>
 	</head>
@@ -193,11 +208,19 @@
 			function showSection(sectionId) {
 				var sections = document.getElementsByClassName('profile-section');
 				for (var i = 0; i < sections.length; i++) {
+					// Reset all to none
 					sections[i].style.display = 'none';
 				}
 				var activeSection = document.getElementById(sectionId);
 				if (activeSection) {
-					activeSection.style.display = 'block';
+					// 1. If it is the HOME section, use FLEX to Center it
+					if (sectionId === 'section-home') {
+						activeSection.style.display = 'flex';
+					} 
+					// 2. For all other sections, use BLOCK (Normal Scrolling)
+					else {
+						activeSection.style.display = 'block';
+					}
 					window.scrollTo(0, 0);
 				}
 			}

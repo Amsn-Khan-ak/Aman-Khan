@@ -39,7 +39,7 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				min-height: 100vh; /* Takes up full screen height */
+				min-height: 100vh;
 				width: 100%;
 			}
 			
@@ -134,7 +134,7 @@
 								<p>Family Background Information</p>
 							</header>
 							
-							<a href="#" class="image featured"><img src="images/AMAN2.png" alt="Family" style="max-width: 600px; margin: 0 auto; border-radius: 10px;" /></a>
+							<a href="#" class="image featured"><img src="images/AMAN2.jpeg" alt="Family" style="max-width: 600px; margin: 0 auto; border-radius: 10px;" /></a>
 
 							<section style="text-align: left; max-width: 600px; margin: 0 auto;">
 								<p style="font-size: 1.3em; line-height: 1.8em;">
@@ -156,36 +156,54 @@
 			</div>
 
 			<div id="section-education" class="profile-section">
-				<div class="wrapper style2">
+				<div class="wrapper style1">
 					<div class="container">
 						<article class="special">
 							<header>
-								<h2>Education, Occupation & Contact</h2>
-								<p>Final Details</p>
+								<h2>Education & Occupation</h2>
+								<p>Career Details</p>
 							</header>
 
-							<div class="row">
-								<section class="col-6 col-12-mobile" style="text-align: left;">
-									<h3 style="text-align: center;">Education & Occupation</h3>
-									<p style="font-size: 1.2em;">
-										<strong>Education:</strong> BCA (Bachelor of Computer Applications)<br />
-										<strong>Occupation:</strong> Investor<br />
-										<strong>Monthly Income:</strong> ₹40,000
-									</p>
-								</section>
+							<a href="#" class="image featured"><img src="images/Education.png" alt="Education" style="max-width: 600px; margin: 0 auto; border-radius: 10px;" /></a>
 
-								<section class="col-6 col-12-mobile" style="text-align: left;">
-									<h3 style="text-align: center;">House & Contact Details</h3>
-									<p style="font-size: 1.2em;">
-										<strong>House:</strong> Own House<br />
-										<strong>Phone No.:</strong> 8989913855<br />
-										<strong>Address:</strong> Seoni, Madhya Pradesh
-									</p>
-								</section>
-							</div>
+							<section style="text-align: left; max-width: 600px; margin: 0 auto;">
+								<p style="font-size: 1.3em; line-height: 1.8em;">
+									<strong>Education:</strong> BCA (Bachelor of Computer Applications)<br />
+									<strong>Occupation:</strong> Investor<br />
+									<strong>Monthly Income:</strong> ₹40,000
+								</p>
+							</section>
 
 							<footer>
-								<br /><br />
+								<br />
+								<button class="button" onclick="showSection('section-contact')">Next</button>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			<div id="section-contact" class="profile-section">
+				<div class="wrapper style1">
+					<div class="container">
+						<article class="special">
+							<header>
+								<h2>House & Contact Details</h2>
+								<p>Get in Touch</p>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/Home.jpg" alt="My House" style="max-width: 600px; margin: 0 auto; border-radius: 10px;" /></a>
+
+							<section style="text-align: left; max-width: 600px; margin: 0 auto;">
+								<p style="font-size: 1.3em; line-height: 1.8em;">
+									<strong>House:</strong> Own House<br />
+									<strong>Phone No.:</strong> 8989913855<br />
+									<strong>Address:</strong> Seoni, Madhya Pradesh
+								</p>
+							</section>
+
+							<footer>
+								<br />
 								<button class="button" onclick="showSection('section-home')">Back to Home</button>
 							</footer>
 						</article>
@@ -208,7 +226,6 @@
 			function showSection(sectionId) {
 				var sections = document.getElementsByClassName('profile-section');
 				for (var i = 0; i < sections.length; i++) {
-					// Reset all to none
 					sections[i].style.display = 'none';
 				}
 				var activeSection = document.getElementById(sectionId);
